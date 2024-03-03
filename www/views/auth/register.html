@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/personalizado.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+
+
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+        <!-- Default view-page layout -->
+        <div class="view">
+            <div class="page login-screen-page">
+                <!-- page-content has additional login-screen content -->
+                <div class="page-content login-screen-content">
+                    <div class="login-screen-title text-color-primary display-flex justify-content-center align-items-center ">
+                        <span class="mdi mdi-water"></span>
+                        <span>Auth template </span>
+                    </div>
+                    <br>
+                    <p class="text-color-primary text-align-center x-large">Cadastre-se</p>
+                    <!-- register form -->
+                    <form id="register_form">
+                        <div class="list">
+                            <ul>
+                                <li class="item-content item-input item-input-outline">
+                                    <div class="item-media">
+                                        <i class="mdi mdi-account-outline"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">Nome</div>
+                                        <div class="item-input-wrap">
+                                        <input id="register_username_field" type="text" name="username" autocomplete="off"  placeholder="john doe" required validate>
+                                        <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item-content item-input item-input-outline  margin-top">
+                                    <div class="item-media">
+                                        <i class="mdi mdi-email-outline"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title item-floating-label">E-mail</div>
+                                        <div class="item-input-wrap">
+                                        <input id="register_email_field" type="email" name="email" autocomplete="off"  placeholder="email@provedor.com" required validate>
+                                        <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="item-content item-input item-input-outline margin-top">
+                                    <div class="item-media">
+                                    <i class="mdi mdi-lock-outline"></i>
+                                    </div>
+                                    <div class="item-inner">
+                                    <div class="item-title item-floating-label">Senha</div>
+                                    <div class="item-input-wrap">
+                                        <input id="register_password_field" name="password" type="password"  placeholder="*****" required validate>
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                    </div>
+                                  </li>
+                                  <small class="block no-margin-top text-color-red password-alert-field"></small>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <ul>
+                                <li class="block before-click-register" >
+                                    <button id="register_btn_form" class=" button button-fill button-round list-button">Cadastrar</button>
+                                </li>
+                                <li class="block after-click-register display-none" >
+                                    <button class=" button button-fill button-round list-button">
+                                        <div class="preloader color-white"></div>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="block-footer">Já tem cadastro?<a href="/login/" class="text-color-primary  margin-left"> Fazer login</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+          
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+</body>
+
+</html>
