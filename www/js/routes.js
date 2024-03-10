@@ -94,8 +94,8 @@ var app = new Framework7({
         }
       }
     },
-     // path: '/user/'
-     {
+     // path: '/account/'
+    {
       path: '/account/',
       url: 'views/auth/account.html',
       animate: false,
@@ -110,7 +110,24 @@ var app = new Framework7({
           $.getScript('js/auth/profile.js')
           $.getScript('js/auth/logout.js')
         }
-      }
+      },
+    },
+     // path: '/set-email/'
+    {
+      path: '/set-email/:id/:email/',
+      url: 'views/auth/set-email.html',
+      animate: false,
+      options: {
+        transition: 'f7-parallax'
+      },
+      on: {
+        pageBeforeIn: function (event, page) {
+          $('.toolbar').hide()
+        },
+        pageInit: function (event, page) {
+          $.getScript('js/auth/setEmail.js')
+        }
+      },
     },
     // path: '/home/:token?'
     {

@@ -13,6 +13,7 @@
     - [Login ](#login)
     - [Profile ](#profile)
     - [Logout ](#logout)
+    - [update email](#update-email)
 - [Technologies](#Technologies)
 - [Installation](#Installation)
 - [My opinion about this project](#opinion)
@@ -234,6 +235,8 @@ const response = await axiosInstance.get('/auth/profile', {
 <img src="github/logout.gif" style="height: 380px; margin: auto;">
 </center>
 
+<h4>Information</h4>
+
 | Property  |  Description
 |--- |--- 
 | Endpoint | /auth/logout
@@ -281,6 +284,80 @@ const response = await axiosInstance.get('/auth/logout', {
 
 </div>
 
+<div id="update-email">
+
+### Update email
+
+<center>
+<img src="github/update_email.gif" style="height: 380px; margin: auto;">
+</center>
+
+<h4>Information</h4>
+
+| Property  |  Description
+|--- |--- 
+| Endpoint | /auth/set-email/:user_id
+| Method | POST
+| Header | Authorization 
+| JSON body | email \| confirm_email
+
+<br>
+
+<h4>Valid data</h4>
+
+This rules is set in the backend.
+
+| Property  |  rules
+|--- |--- 
+| email | required \| valid_email 
+| confirm_email | required \| valid_email \| matches[email] 
+
+<p>Code example:</p>
+
+````
+//www/js/auth/setEmail.js
+ const response = await axiosInstance.post(`/auth/set-email/${id}`, 
+        {
+          email: data.email,
+          confirm_email: data.confirm_email,
+        },
+        {
+          headers: {
+            'Authorization' : `Bearer ${token}`
+          },
+        }
+      )
+````
+
+<br>
+<p>Successfully response.</p>
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=201|created&color=GREEN&style=for-the-badge)
+
+
+<br>
+<p>Some  example errors messages:</p>
+
+``Payload``
+
+````
+{
+	"email": "",
+	"confirm_email": "newjabes@example.com"
+}
+````
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=200&color=GREEN&style=for-the-badge)
+
+````
+{
+	"email": "The email field is required.",
+	"confirm_email": "The confirm_email field does not match the email field."
+}
+````
+<br/><br/>
+
+</div>
+
 <div id="Technologies">
 
 ## :bar_chart: Technologies
@@ -306,6 +383,7 @@ const response = await axiosInstance.get('/auth/logout', {
 ## :computer: Installation
 
 #### Step 1 - Download this project
+
   ##### Option :one: - Download Zip 
   ##### Option :two: - Cloning a repository - [how to do this](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). 
 
@@ -338,8 +416,8 @@ This project is related to An API built in codeIgniter 4, you can see the [API h
 
 ## :white_check_mark: To do 
 - :black_square_button: update user info like:
+    - :white_check_mark: email 
     - username 
-    - email 
     - password
 
 - :black_square_button: delete user

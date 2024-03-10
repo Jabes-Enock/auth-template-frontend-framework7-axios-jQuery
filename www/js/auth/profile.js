@@ -37,7 +37,7 @@ var putUserDataIntoView = (user) => {
             </a>
           </li>
           <li>
-          <a class="item-link item-content">
+          <a class="item-link item-content" href="/set-email/${user.id}/${user.email}/">
             <div class="item-inner">
               <div class="item-title">E-mail</div>
               <div class="item-after">${user.email}</div>

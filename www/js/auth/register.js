@@ -92,8 +92,6 @@ var register = async (data) => {
           () => {
           app.views.main.router.navigate('/login/') 
       })
-    
-      
     } catch (error) {
       app.dialog.alert('Houve um erro, por favor tente novamente.', 'Ops..',
       () => {

@@ -26,18 +26,28 @@
     <div id="app">
         <!-- Default view-page layout -->
         <div class="view">
-            <div class="page login-screen-page">
+            <div class="page">
+                
+                <div class="navbar navbar-large navbar-transparent">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner sliding">
+                        <div class="left margin-left">
+                            <a href="/account/" class="back" data-transition="f7-parallax">
+                                <i class="mdi mdi-arrow-left x-large color-theme-primary"></i>
+                            </a>
+                        </div>
+                      <div class="title">Atualize seu email</div>
+                      <div class="title-large">
+                        <div class="title-large-text">Atualize seu email.</div>
+                      </div>
+                    </div>
+                  </div>
                 <!-- page-content has additional login-screen content -->
                 <div class="page-content login-screen-content">
-                    <div class="login-screen-title text-color-primary display-flex justify-content-center align-items-center ">
-                        <span class="mdi mdi-water text-6xl"></span>
-                        <span>Auth template</span>
-                    </div>
-                    <br>
                     
-                    <p class="text-color-primary text-align-center x-large">Login</p>
-                    <!-- Login form -->
-                    <form id="login_form">
+                
+                    <!-- Email form -->
+                    <form id="set_email_form">
                         <div class="list">
                             <ul>
                                 <li class="item-content item-input item-input-outline">
@@ -45,9 +55,9 @@
                                         <i class="mdi mdi-email-outline"></i>
                                     </div>
                                     <div class="item-inner">
-                                        <div class="item-title item-floating-label">E-mail</div>
+                                        <div class="item-title item-floating-label">Novo e-mail</div>
                                         <div class="item-input-wrap">
-                                        <input id="login_email_field" type="email" name="email" autocomplete="no" placeholder="email@provedor.com" required validate>
+                                        <input id="set_email_field" type="email" name="email" autocomplete="off" placeholder="new@provedor.com" required validate>
                                         <span class="input-clear-button"></span>
                                         </div>
                                     </div>
@@ -55,12 +65,12 @@
                                 
                                 <li class="item-content item-input item-input-outline margin-top">
                                     <div class="item-media">
-                                    <i class="mdi mdi-lock-outline"></i>
+                                    <i class="mdi mdi-check-outline"></i>
                                     </div>
                                     <div class="item-inner">
-                                    <div class="item-title item-floating-label">Senha</div>
+                                    <div class="item-title item-floating-label">Confirmar novo e-mail</div>
                                     <div class="item-input-wrap">
-                                        <input id="login_password_field" name="password" type="password" placeholder="*****" required validate>
+                                        <input id="set_confirm_email_field" name="confirm_email"  autocomplete="off" type="email" placeholder="new@provider.com" required validate>
                                         <span class="input-clear-button"></span>
                                     </div>
                                     </div>
@@ -70,16 +80,16 @@
                         <br>
                         <div class="list">
                             <ul>
-                                <li class="block before-click" >
-                                    <button id="login_btn_form" class=" button button-fill button-round list-button">Login</button>
+                                <li class="block before-click-set-email" >
+                                    <button id="set_email_btn_form" class=" button button-fill button-round list-button">Atualizar</button>
                                 </li>
-                                <li class="block after-click display-none" >
+                                <li class="block after-click-set-email display-none" >
                                     <button class=" button button-fill button-round list-button">
                                         <div class="preloader color-white"></div>
                                     </button>
                                 </li>
                             </ul>
-                            <div class="block-footer">Não tem cadastro ainda? <a href="/register/" class="text-color-primary margin-left">Cadastre-se</a></div>
+                           
                         </div>
                     </form>
                 </div>
