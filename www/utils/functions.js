@@ -105,3 +105,58 @@ var setEmailMessagesHandler = (message) => {
 
   return 'ok'
 }
+
+
+/* setUsername handler */
+var setUsernameMessagesHandler = (message) => {
+
+  if ( message.username == 'The username field is required.') {
+    const text = {
+      label: 'Novo nome',
+      issue: 'O campo novo nome é obrigatorio.</br></br> Por favor tente novamente.'
+    }
+    return text
+  }
+
+  if ( message.username == 'The username field must contain a unique value.') {
+    const text = {
+      label: 'Novo nome',
+      issue: 'O "novo nome" digitado não é válido.</br></br>Por favor tente novamente.'
+    }
+    return text
+  }
+  
+  if ( message.username == 'The username field cannot exceed 30 characters in length.') {
+    const text = {
+      label: 'Novo nome',
+      issue: 'O "novo nome" digitado deve ter no máximo 30 caracteres.</br></br>Por favor tente novamente.'
+    }
+    return text
+  }
+  
+  if ( message.username == 'The username field must be at least 3 characters in length.') {
+    const text = {
+      label: 'Novo nome',
+      issue: 'O "novo nome" digitado deve ter no minimo 3 caracteres.</br></br>Por favor tente novamente.'
+    }
+    return text
+  }
+
+  if ( message.confirm_username == 'The confirm_username field is required.') {
+    const text = {
+      label: 'Confirmar nome',
+      issue: 'O campo "confirmar novo nome" é obrigatorio.</br></br> Por favor tente novamente.'
+    }
+    return text
+  }
+
+  if ( message.confirm_username == 'The confirm_username field does not match the username field.') {
+    const text = {
+      label: 'Confirmar nome',
+      issue: 'O campo "confirmar novo nome" deve ser igual ao campo "novo nome".</br></br> Por favor tente novamente.'
+    }
+    return text
+  }
+
+  return 'ok'
+}

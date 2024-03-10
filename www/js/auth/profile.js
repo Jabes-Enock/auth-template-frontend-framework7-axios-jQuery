@@ -29,7 +29,7 @@ var putUserDataIntoView = (user) => {
     <div class="list list-outline-ios list-strong-ios list-dividers-ios">
         <ul>
           <li>
-            <a class="item-link item-content">
+            <a class="item-link item-content" href="/set-username/${user.id}/${user.username}/">
               <div class="item-inner">
                 <div class="item-title">Nome de preferência</div>
                 <div class="item-after">${user.username}</div>

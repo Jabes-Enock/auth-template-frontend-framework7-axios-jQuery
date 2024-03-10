@@ -14,6 +14,7 @@
     - [Profile ](#profile)
     - [Logout ](#logout)
     - [update email](#update-email)
+    - [update username](#update-username)
 - [Technologies](#Technologies)
 - [Installation](#Installation)
 - [My opinion about this project](#opinion)
@@ -354,6 +355,79 @@ This rules is set in the backend.
 	"confirm_email": "The confirm_email field does not match the email field."
 }
 ````
+
+</div>
+<div id="update-username">
+<br/><br/>
+
+### Update Username
+
+<center>
+<img src="github/update_username.gif" style="height: 380px; margin: auto;">
+</center>
+
+<h4>Information</h4>
+
+| Property  |  Description
+|--- |--- 
+| Endpoint | /auth/set-username/:user_id
+| Method | POST
+| Header | Authorization 
+| JSON body | username \| confirm_username
+
+<br>
+
+<h4>Valid data</h4>
+
+This rules is set in the backend.
+
+| Property  |  rules
+|--- |--- 
+| username | required \| unique \| max_length[30] \| min_length[3]
+| confirm_username | required  \| matches[username] 
+
+<p>Code example:</p>
+
+````
+//www/js/auth/setUsername.js
+ const response = await axiosInstance.post(`/auth/set-username/${id}`, 
+        {
+          username: data.username,
+          confirm_username: data.confirm_username,
+        },
+        {
+          headers: {
+            'Authorization' : `Bearer ${token}`
+          },
+        }
+      )
+````
+
+<br>
+<p>Successfully response.</p>
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=201|created&color=GREEN&style=for-the-badge)
+
+
+<br>
+<p>Some  example errors messages:</p>
+
+``Payload``
+
+````
+{
+	"username": "jabes enock",
+	"confirm_username": "Jabes enock"
+}
+````
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=200&color=GREEN&style=for-the-badge)
+
+````
+{
+	"username": "The username field must contain a unique value.",
+	"confirm_username": "The confirm_username field does not match the username field."
+}
+````
 <br/><br/>
 
 </div>
@@ -416,8 +490,6 @@ This project is related to An API built in codeIgniter 4, you can see the [API h
 
 ## :white_check_mark: To do 
 - :black_square_button: update user info like:
-    - :white_check_mark: email 
-    - username 
     - password
 
 - :black_square_button: delete user
