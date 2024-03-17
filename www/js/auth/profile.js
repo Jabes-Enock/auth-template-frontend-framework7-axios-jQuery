@@ -27,12 +27,12 @@ var putUserDataIntoView = (user) => {
   $('.account-content').html('')
   $('.account-content').append(`
     <div class="list list-outline-ios list-strong-ios list-dividers-ios">
-        <ul>
+        <ul class="account-ul">
           <li>
             <a class="item-link item-content" href="/set-username/${user.id}/${user.username}/">
               <div class="item-inner">
                 <div class="item-title">Nome de preferência</div>
-                <div class="item-after">${user.username}</div>
+                <div class="item-after username">${user.username}</div>
               </div>
             </a>
           </li>
@@ -47,9 +47,16 @@ var putUserDataIntoView = (user) => {
         </ul>
     </div>
   `)
-
   
-  
+  $('.account-ul').append(`
+    <li>
+      <a class="item-link item-content" href="/delete/${user.id}/${user.username}/">
+        <div class="item-inner">
+          <div class="item-title">Excluir minha conta</div>
+        </div>
+      </a>
+    </li>
+  `)
 }
 
 var fluxo = async () => {

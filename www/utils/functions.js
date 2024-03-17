@@ -56,7 +56,7 @@ var registerMessagesHandler = (message) => {
   if ( message.username == 'The username field must contain a unique value.') {
     const text = {
       label: 'Nome',
-      issue: 'Nome de usuário inválido, por favor tente outro nome.'
+      issue: 'Nome do usuário inválido, por favor tente outro nome.'
     }
     return text
   }
@@ -64,7 +64,7 @@ var registerMessagesHandler = (message) => {
   if ( message.email == 'The email field must contain a unique value.') {
     const text = {
       label: 'E-mail',
-      issue: 'E-mail de usuário inválido, por favor tente outro Email.'
+      issue: 'E-mail do usuário inválido, por favor tente outro e-mail.'
     }
     return text
   }
@@ -72,7 +72,7 @@ var registerMessagesHandler = (message) => {
   if ( message.email == 'The email field must contain a valid email address.') {
     const text = {
       label: 'E-mail',
-      issue: 'E-mail de usuário inválido, por favor tente outro Email.'
+      issue: 'E-mail do usuário inválido, por favor tente outro Email.'
     }
     return text
   }

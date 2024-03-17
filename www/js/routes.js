@@ -138,6 +138,27 @@ var app = new Framework7({
         }
       },
     },
+     // path: '/delete/'
+    {
+      path: '/delete/:id/:username/',
+      url: 'views/auth/delete.html',
+      options: {
+        transition: 'f7-parallax'
+      },
+      on: {
+        pageBeforeIn: function (event, page) {
+          $('.toolbar').hide()
+          const  { username } = app.views.main.router.currentRoute.params
+          const putUserDataIntoView = (username) => {
+            $('.delete-username-field').html(`<span class="username">${username}</span>.`)
+          }
+          putUserDataIntoView(username)
+        },
+        pageInit: function (event, page) {
+          $.getScript('js/auth/delete.js')
+        }
+      },
+    },
     // path: '/home/:token?'
     {
       path: '/home/:token?/',

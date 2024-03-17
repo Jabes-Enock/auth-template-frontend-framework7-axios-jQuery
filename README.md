@@ -15,10 +15,11 @@
       - [Login ](#login)
       - [Profile ](#profile)
       - [Logout ](#logout)
-      - [update email](#update-email)
-      - [update username](#update-username)
+      - [Update email](#update-email)
+      - [Update username](#update-username)
+      - [Delete user (dark theme)](#delete-user)
     - UI
-      - [dark theme](#dark-theme)
+      - [Dark theme](#dark-theme)
 
 - [Technologies](#Technologies)
 - [Installation](#Installation)
@@ -450,7 +451,49 @@ This rules is set in the backend.
 
 </div>
 
+<div id="delete-user">
+<br/><br/>
+
+### Delete user
+
+<center>
+<img src="github/delete.gif" style="height: 380px; margin: auto;">
+</center>
+
+
+<h4>Information</h4>
+
+| Property  |  Description
+|--- |--- 
+| Endpoint | /auth/delete/:user_id
+| Method | DELETE
+| Header | Authorization 
+
+<br>
+
+<h4>Valid header</h4>
+
+<p>Code example:</p>
+
+````
+//www/js/auth/delete.js
+const response = await axiosInstance.delete(`/auth/delete/${id}`, {
+      headers: {
+        'Authorization' : `Bearer ${token}`
+      }
+    })
+````
+
+<br>
+<p>Successfully response.</p>
+
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=200|created&color=GREEN&style=for-the-badge)
+
+</div>
+
+
 <div id="Technologies">
+<br><br>
 
 ## :bar_chart: Technologies
 

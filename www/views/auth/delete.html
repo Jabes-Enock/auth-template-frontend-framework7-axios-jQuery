@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>My App</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="lib/framework7-bundle.min.css">
+    <!-- CSS PERSONALIZADO PARA MENU-->
+    <link rel="stylesheet" href="css/personalizado.css">
+    <!--Ícones Material Design-->
+    <link rel="stylesheet" href="css/materialdesignicons.min.css">
+
+
+</head>
+
+<body>
+    <!-- App root element -->
+    <div id="app">
+        <!-- Default view-page layout -->
+        <div class="view">
+            <div class="page color-primary">
+                
+                <div class="navbar navbar-large navbar-transparent">
+                    <div class="navbar-bg"></div>
+                    <div class="navbar-inner sliding">
+                        <div class="left margin-left">
+                            <a href="/account/" class="back" data-transition="f7-parallax">
+                                <i class="mdi mdi-arrow-left x-large color-theme-primary"></i>
+                            </a>
+                        </div>
+                      <div class="title">Excluir conta</div>
+                      <div class="title-large">
+                        <div class="title-large-text">Excluir conta</div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- page-content has additional login-screen content -->
+                <div class="page-content login-screen-content">
+                    
+                    <div class="block delete-content">
+                        <h1 >Olá, <span class="delete-username-field"></span> </h1>
+                    </div>
+                    <br>
+                    <div class="card">
+                        <div class="card-content card-content-padding">
+                          <p>É uma pena que esteja nos deixando.</p> 
+                          <p>Você deve ficar ciente que esta ação fará com que você perca todos os seus dados e que não será possivel fazer login nesta conta novamente.</p>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="list">
+                        <ul>
+                            <li class="block before-click-delete-account" >
+                                <button id="delete_account_btn" class="button button-fill button-round list-button color-red ">Excluir conta</button>
+                            </li>
+                            <li class="block after-click-delete-account display-none" >
+                                <button class=" button button-fill button-round list-button color-red">
+                                    <div class="preloader color-white"></div>
+                                </button>
+                            </li>
+                        </ul>
+                      </div>
+                </div>
+            </div>
+        </div>
+          
+    </div>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="lib/framework7-bundle.min.js"></script>
+	<!-- jQuery -->
+	<script type="text/javascript" src="lib/jquery-3.7.0.min.js"></script>	
+    <!-- Roteamento do app-->
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script src="cordova.js"></script>
+</body>
+
+</html>
