@@ -6,12 +6,7 @@ var app = new Framework7({
   el: '#app',
   // App Name
   name: 'Auth template',
-
-  dialog: {
-    buttonOk: 'ok',
-    buttonCancel: 'cancelar',
-  },
-
+  
   // specify primary color theme
   colors: {
     primary: '#0B6623'
@@ -28,15 +23,11 @@ var app = new Framework7({
       animate: false,
       on: {
         pageBeforeIn: function (event, page) {
-
           $('.toolbar').hide()
-
-          
         },
         pageInit: function (event, page) {
-        // fazer algo quando a página for inicializada
         const userIsLoggedIn = () => {
-          const login =  localStorage.getItem('isLoggedIn')
+          const login =  localStorage.getItem('isLoggedIn') || false
           
           if ( ! login ) {
             app.views.main.router.navigate('/login/', {
@@ -48,7 +39,8 @@ var app = new Framework7({
           app.views.main.router.navigate('/home/')
         }
 
-        setTimeout(userIsLoggedIn, 100)
+        userIsLoggedIn()
+        setTheme()
         },
       }
     },
@@ -171,14 +163,52 @@ var app = new Framework7({
             localStorage.setItem('token', token)
           }
 
-
-
           localStorage.setItem('isLoggedIn', true)
         },
         pageInit: function (event, page) {
         // fazer algo quando a página for inicializada
           $.getScript('js/auth/profile.js')
           $.getScript('js/home.js')
+        }
+      }
+    },
+    // path: '/settings/'
+    {
+      path: '/settings/',
+      name: 'settings',
+      url: 'settings.html',
+      options: {
+        transition: 'f7-fade'
+      },
+      on: {
+        pageBeforeIn: function (event, page) {
+          $('.toolbar').show()  
+
+          if ($('body').hasClass('dark') )  {
+            $('#btn_change_theme').attr('checked', true)
+            return
+          } 
+
+          $('#btn_change_theme').attr('checked', false)
+        },
+        pageInit: function (event, page) {
+        // fazer algo quando a página for inicializada
+        
+
+
+          $('#btn_change_theme').on('click', () => {
+            if ($('body').hasClass('dark') )  {
+              localStorage.setItem('theme', 'light')
+              $('body').removeClass('dark')
+              $('#btn_change_theme').attr('checked', true)
+              
+              return
+            } 
+            
+            localStorage.setItem('theme', 'dark')
+            $('body').addClass('dark')
+            $('#btn_change_theme').attr('checked', false)
+          })
         }
       }
     },

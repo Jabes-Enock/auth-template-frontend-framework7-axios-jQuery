@@ -1,3 +1,23 @@
+/* theme */
+var setTheme = () => {
+  const theme = localStorage.getItem('theme') || false
+
+  if ( theme ) {
+    if ( theme === 'dark' ) { 
+        $('body').addClass('dark')
+        localStorage.setItem('theme', 'dark')
+        return
+    }
+
+    if ( theme === 'light' ) { 
+        $('body').addClass('light')
+        localStorage.setItem('theme', 'light')
+        return
+    }
+  }
+}
+
+
 /* 
 Get Token
 */
@@ -22,7 +42,8 @@ var clearAndRedirectToLogin = () => {
     },
   )
 
-  localStorage.clear()
+  localStorage.removeItem('isLoggedIn')
+  localStorage.removeItem('token')
 
   return
 } 

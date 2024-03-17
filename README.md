@@ -9,12 +9,17 @@
 - [Introduction](#Introduction)
 
 - [Features and some gif's ](#features-and-demo)
-    - [Register ](#register)
-    - [Login ](#login)
-    - [Profile ](#profile)
-    - [Logout ](#logout)
-    - [update email](#update-email)
-    - [update username](#update-username)
+
+    - AUTH
+      - [Register ](#register)
+      - [Login ](#login)
+      - [Profile ](#profile)
+      - [Logout ](#logout)
+      - [update email](#update-email)
+      - [update username](#update-username)
+    - UI
+      - [dark theme](#dark-theme)
+
 - [Technologies](#Technologies)
 - [Installation](#Installation)
 - [My opinion about this project](#opinion)
@@ -432,6 +437,19 @@ This rules is set in the backend.
 
 </div>
 
+<div id="dark-theme">
+<br/><br/>
+
+### Dark theme
+
+<center>
+<img src="github/theme.gif" style="height: 380px; margin: auto;">
+</center>
+
+<br/><br/>
+
+</div>
+
 <div id="Technologies">
 
 ## :bar_chart: Technologies
@@ -469,7 +487,7 @@ This rules is set in the backend.
 ## :trophy: Testimony :trophy:
 This project helped me understand how an authentication system is handle in the frontend and how I should send data to the API which have protect routes.
 
-I created this project to use as a standard for applications developed in Cordova, but feel free to adapt this project to create web applications developed in React, Vue or other technologies. Use creativity.
+I created this project to use as a standard for applications developed in framework7, but feel free to adapt this project to create web applications developed in React, Vue or other technologies. Use creativity.
 </div>
 </br>
 
