@@ -465,6 +465,9 @@ This rules is set in the backend.
 ##### :three:  jQuery
 [jQuery](https://jquery.com/) - "jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation..."
 
+##### :four:  Material design icons
+[Material design icons | Pictogrammers](https://pictogrammers.com/library/mdi/) - "Open-source iconography for designers and developers"
+
 </br>
 
 </div>
