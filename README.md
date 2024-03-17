@@ -556,7 +556,6 @@ This project is related to An API built in codeIgniter 4, you can see the [API h
 - :black_square_button: update user info like:
     - password
 
-- :black_square_button: delete user
 </div>
 </br>
 
